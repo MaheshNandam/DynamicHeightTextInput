@@ -8,8 +8,9 @@
   },
   "dependencies": {
     "react": "16.2.0",
-    "react-native": "0.52.0",
+    "react-native": "^0.55.4",
     "react-native-device-info": "^0.22.4",
+    "react-native-whatsapp-textinput": "0.0.2",
     "react-navigation": "^2.11.2"
   },
   "devDependencies": {

@@ -12,8 +12,9 @@ import {
   Keyboard,
   StatusBar
 } from 'react-native';
-import { SafeAreaView } from 'react-navigation'; //from ˆ2 version
-import AutoTextInputHeight from './app/AutoTextInputHeight';
+import { SafeAreaView } from 'react-navigation';
+// import AutoTextInputHeight from './app/AutoTextInputHeight';
+import WhatsAppTextInput from 'react-native-whatsapp-textinput';
 
 export default class App extends Component {
   constructor(props) {
@@ -40,7 +41,8 @@ export default class App extends Component {
             }}>
               <Text>What's App Chat Room UI</Text>
             </View>
-            <AutoTextInputHeight
+            
+            <WhatsAppTextInput
               backgroundColor={'#fff'}
               borderTopColor={'#f5f5f5'}
               placeholderText={'Aa'}
@@ -52,7 +54,10 @@ export default class App extends Component {
               keyboardType={'default'}
               sendButtonBgColor={'#1a75ff'}
               sendImage={require('./images/sendIcon.png')}
-          />
+              onPress={()=>alert('sent')}
+              sendButtonBgDisableColor={'#f5f5f0'}
+              sendButtonBgEnableColor={'#002080'}
+        />
           </View>
         </TouchableWithoutFeedback>
       </SafeAreaView>
