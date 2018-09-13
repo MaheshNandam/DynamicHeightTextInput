@@ -19,13 +19,14 @@ import WhatsAppTextInput from 'react-native-whatsapp-textinput';
 export default class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      messageText: ''
+    }
   }
 
   render() {
     return (
-      <SafeAreaView forceInset={{ bottom: 'always' }} style={{
-        flex: 1,
-      }}>
+      <SafeAreaView forceInset={{ bottom: 'always' }} style={{flex: 1}}>
         <TouchableWithoutFeedback
           onPress={() => {
             Keyboard.dismiss()
@@ -47,17 +48,16 @@ export default class App extends Component {
               borderTopColor={'#f5f5f5'}
               placeholderText={'Aa'}
               placeholderTextColor='#9e9e9e'
-              textColor={'#000'}
+              messageTextColor={'#000'}
               textInputBgColor={'#f5f5f5'}
               editable={true}
               multiline={true}
               keyboardType={'default'}
               sendButtonBgColor={'#1a75ff'}
               sendImage={require('./images/sendIcon.png')}
-              onPress={()=>alert('sent')}
               sendButtonBgDisableColor={'#f5f5f0'}
               sendButtonBgEnableColor={'#002080'}
-        />
+            />
           </View>
         </TouchableWithoutFeedback>
       </SafeAreaView>
