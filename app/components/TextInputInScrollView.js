@@ -52,6 +52,7 @@ export default class TextInputInScrollView extends Component {
                         keyboardType={'default'}
                         value={this.state.name}
                         style={styles.textInputStyle}
+                        onChangeText={(value)=> this.setState({ name: value})}
                     />
                     <TextInput
                         placeholder={'Your email'}
@@ -61,6 +62,7 @@ export default class TextInputInScrollView extends Component {
                         keyboardType={'email-address'}
                         value={this.state.email}
                         style={styles.textInputStyle}
+                        onChangeText={(value) => this.setState({ email: value })}
                     />
                     <TextInput
                         placeholder={'Your contact number'}
@@ -70,12 +72,13 @@ export default class TextInputInScrollView extends Component {
                         keyboardType={'phone-pad'}
                         value={this.state.contactNumber}
                         style={styles.textInputStyle}
+                        onChangeText={(value) => this.setState({ contactNumber: value })}
                     />
                     <TextInput
                         ref={'AboutYourSelf'}
                         editable={true}
                         multiline={true}
-                        placeholder={'AboutYourSelf'}
+                        placeholder={'AboutYourSelf - (Multi line field)'}
                         placeholderTextColor={'#bfbfbf'}
                         placeholderStyle={styles.placeholderStyle}
                         underlineColorAndroid='transparent'
@@ -88,6 +91,7 @@ export default class TextInputInScrollView extends Component {
                         onContentSizeChange={(event) => this.setState({ height: event.nativeEvent.contentSize.height })}
                         style={[styles.textInputStyle, {
                             height: Math.min(120, Math.max(40, this.state.height)),
+                            paddingTop: 10,
                         }]}
                         onFocus={() => this.inputFocused('Password')}
                     />
@@ -100,6 +104,7 @@ export default class TextInputInScrollView extends Component {
                         keyboardType={'default'}
                         value={this.state.password}
                         style={styles.textInputStyle}
+                        onChangeText={(value) => this.setState({ password: value })}
                     />
                 </KeyboardAwareScrollView>
             </SafeAreaView>
@@ -113,7 +118,7 @@ const styles = StyleSheet.create({
     },
     placeholderStyle: {
         fontSize: 14,
-        color: '#000'
+        color: '#000',
     },
     scrollStyle:{
         flexGrow: 1,
