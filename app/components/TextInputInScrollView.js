@@ -40,7 +40,7 @@ export default class TextInputInScrollView extends Component {
 
     render() {
         return (
-            <SafeAreaView forceInset={{ bottom: 'always' }} style={{ flex: 1 }} onPress={() => {
+            <SafeAreaView forceInset={{ bottom: 'always' }} style={{ flex: 1, backgroundColor: '#6f6f6f' }} onPress={() => {
                 Keyboard.dismiss()
             }}>
                 <KeyboardAwareScrollView  ref='scrollView' contentContainerStyle={styles.scrollStyle}>
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     },
     scrollStyle:{
         flexGrow: 1,
-        justifyContent: 'center',
+        // justifyContent: 'center',
         backgroundColor: '#6f6f6f',
     },
     textInputStyle: {
